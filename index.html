@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Veda Technology - Technology training, internships and digital services.">
+<title>Veda Technology | Business & Services</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #26344a;
+    background: #f8faff;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px #00000012;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #153d75;
+}
+
+.logo span {
+    color: #f07838;
+}
+
+nav a {
+    text-decoration: none;
+    color: #26344a;
+    margin-left: 22px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #f07838;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(120deg, #102d57, #2464a8);
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff9b57;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #e0e9f5;
+}
+
+.btn {
+    display: inline-block;
+    background: #f07838;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #d95f22;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #153d75;
+    font-size: 32px;
+}
+
+.section-title p {
+    color: #777;
+    margin-top: 8px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #153d75;
+    margin-bottom: 15px;
+}
+
+.about-box {
+    background: #e9f1ff;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.about-box h3 {
+    color: #f07838;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0000000d;
+    transition: 0.3s;
+    border-bottom: 3px solid #f07838;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card .icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #153d75;
+    margin-bottom: 12px;
+}
+
+.programs {
+    background: #eef4fc;
+}
+
+.highlight {
+    background: #153d75;
+    color: white;
+    text-align: center;
+}
+
+.highlight h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.highlight p {
+    margin-bottom: 25px;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 2px 10px #0000000a;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    color: #153d75;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-answer {
+    display: none;
+    padding-top: 15px;
+    color: #666;
+}
+
+.contact {
+    background: #eef4fc;
+}
+
+.contact-container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.contact textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+footer {
+    background: #102d57;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media(max-width: 850px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VEDA <span>TECHNOLOGY</span></div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQs</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Welcome to <span>Veda Technology</span></h1>
+        <p>
+            Empowering students and businesses through technology,
+            professional training, internships and innovative
+            digital solutions.
+        </p>
+        <a href="#services" class="btn">Explore Services</a>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <div class="about">
+        <div>
+            <h2>About Veda Technology</h2>
+            <p>
+                Veda Technology is a technology and digital services
+                organization focused on helping students develop
+                technical skills and helping businesses grow through
+                modern digital solutions.
+            </p>
+            <br>
+            <p>
+                Our focus is on technology education, practical
+                learning, internship opportunities and IT services.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h3>Our Mission</h3>
+            <p>
+                To provide quality technology education, practical
+                experience and innovative digital solutions.
+            </p>
+            <br>
+            <h3>Our Vision</h3>
+            <p>
+                To build a skilled and technology-driven future
+                through continuous learning and innovation.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAMS SECTION -->
+<section class="programs" id="programs">
+    <div class="section-title">
+        <h2>Technology Programs</h2>
+        <p>Learn modern technologies and develop your skills.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Web Development</h3>
+            <p>Learn HTML, CSS, JavaScript and modern website development.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Explore AI, machine learning and intelligent applications.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🐍</div>
+            <h3>Python Programming</h3>
+            <p>Build programming skills using Python and practical projects.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TRAINING SECTION -->
+<section>
+    <div class="section-title">
+        <h2>Training & Internships</h2>
+        <p>Build your career with practical learning experiences.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🎓</div>
+            <h3>Technical Training</h3>
+            <p>Develop technical knowledge through structured learning.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Internship Programs</h3>
+            <p>Gain practical project experience and improve your skills.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h3>Career Development</h3>
+            <p>Improve professional skills and prepare for career opportunities.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="programs" id="services">
+    <div class="section-title">
+        <h2>IT & Digital Services</h2>
+        <p>Technology solutions for modern businesses.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Website Development</h3>
+            <p>Professional and responsive websites for businesses.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Digital Solutions</h3>
+            <p>Modern digital solutions to improve business productivity.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>IT Services</h3>
+            <p>Technology support and software-based business solutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HIGHLIGHT SECTION -->
+<section class="highlight">
+    <h2>Build Your Future With Technology</h2>
+    <p>Learn new skills, work on projects and grow your career.</p>
+    <a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq">
+    <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions.</p>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            What is Veda Technology? <span>+</span>
+        </div>
+        <div class="faq-answer">
+            Veda Technology is a technology and digital services organization.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            What programs are available? <span>+</span>
+        </div>
+        <div class="faq-answer">
+            Programs include web development, Python and artificial intelligence.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Are internship opportunities available? <span>+</span>
+        </div>
+        <div class="faq-answer">
+            Please contact the organization for current internship availability.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            How can I contact Veda Technology? <span>+</span>
+        </div>
+        <div class="faq-answer">
+            You can use the contact form below to send an enquiry.
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Have a question? Send us a message.</p>
+    </div>
+
+    <div class="contact-container">
+        <form id="contactForm">
+            <input type="text" id="name"
+                placeholder="Your Name" required>
+
+            <input type="email" id="email"
+                placeholder="Your Email" required>
+
+            <input type="text" id="subject"
+                placeholder="Subject" required>
+
+            <textarea id="message"
+                placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>VEDA TECHNOLOGY</h2>
+    <p>Technology | Training | Internships | Digital Services</p>
+    <p>© 2026 Veda Technology. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Mobile Navigation
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+// FAQ Accordion
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    const symbol = element.querySelector("span");
+
+    const isOpen = answer.style.display === "block";
+
+    document.querySelectorAll(".faq-answer").forEach(item => {
+        item.style.display = "none";
+    });
+
+    document.querySelectorAll(".faq-question span").forEach(item => {
+        item.textContent = "+";
+    });
+
+    if (!isOpen) {
+        answer.style.display = "block";
+        symbol.textContent = "-";
+    }
+}
+
+// Contact Form
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const mailBody =
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nMessage: " + message;
+
+    const mailtoLink =
+        "mailto:YOUR_EMAIL@example.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(mailBody);
+
+    window.location.href = mailtoLink;
+});
+
+</script>
+
+</body>
+</html
